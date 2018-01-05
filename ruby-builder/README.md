@@ -4,7 +4,7 @@
 ## Create a `Dockerfile` in your Ruby gem's project
 
 ```dockerfile
-FROM ramseyinhouse/ruby-builder22
+FROM ramseyinhouse/ruby-builder-2.2
 
 COPY your-gem.gemspec /code/your-gem.gemspec
 COPY Gemfile /code/Gemfile
@@ -42,9 +42,9 @@ $ docker run -it --rm -v "$PWD":/code/dist your-gem build
 # Image Variants
 
 The builder image comes in three flavors, providing ruby versions 2.2, 2.3 and 2.4:
-- `ramseyinhouse/ruby-builder22`
-- `ramseyinhouse/ruby-builder23`
-- `ramseyinhouse/ruby-builder24`
+- `ramseyinhouse/ruby-builder-2.2`
+- `ramseyinhouse/ruby-builder-2.3`
+- `ramseyinhouse/ruby-builder-2.4`
 
 
 # License

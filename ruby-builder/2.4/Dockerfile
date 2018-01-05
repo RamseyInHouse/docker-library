@@ -1,4 +1,4 @@
-FROM ramseyinhouse/rubybin AS binscripts
+FROM ramseyinhouse/ruby-bin AS binscripts
 
 FROM ruby:2.4-alpine
 
@@ -7,7 +7,6 @@ RUN apk add --update --no-cache --virtual .build-dependencies \
     git
 
 WORKDIR /code
-VOLUME /code
 
 COPY --from=binscripts /bin/setup /usr/local/bin
 COPY --from=binscripts /bin/validate /usr/local/bin
