@@ -1,4 +1,4 @@
-FROM ruby:alpine
+FROM php:7-cli-alpine3.4
 
 WORKDIR /bin
 

@@ -1,10 +1,8 @@
-FROM ramseyinhouse/ruby-bin AS binscripts
+FROM ramseyinhouse/php-bin AS binscripts
 
-FROM ruby:2.2-alpine
+FROM php:7-cli-alpine3.4
 
-RUN apk add --update --no-cache --virtual .build-dependencies \
-    build-base \
-    git
+RUN php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin --filename=composer
 
 WORKDIR /code
 
