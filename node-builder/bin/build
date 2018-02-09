@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+set -euo pipefail
+mkdir -p dist
+yarn pack --filename dist/artifact.tar.gz > /dev/null
+echo artifact.tar.gz
