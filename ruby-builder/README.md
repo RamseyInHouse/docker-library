@@ -4,17 +4,17 @@
 ## Create a `Dockerfile` in your Ruby gem's project
 
 ```dockerfile
-FROM ramseyinhouse/ruby-builder22
+FROM ramseyinhouse/ruby-builder-2.2
 
 COPY your-gem.gemspec /code/your-gem.gemspec
+COPY lib/your-gem/version.rb /code/lib/your-gem/version.rb
 COPY Gemfile /code/Gemfile
 COPY Gemfile.lock /code/Gemfile.lock
-COPY lib/your-gem/version.rb /code/lib/your-gem/version.rb
 
-RUN setup
+RUN setup \
+    && apk del .build-dependencies
 
 COPY . /code
-
 ```
 
 Put this file in the root of your app, next to the `Gemfile`.
@@ -42,9 +42,9 @@ $ docker run -it --rm -v "$PWD":/code/dist your-gem build
 # Image Variants
 
 The builder image comes in three flavors, providing ruby versions 2.2, 2.3 and 2.4:
-- `ramseyinhouse/ruby-builder22`
-- `ramseyinhouse/ruby-builder23`
-- `ramseyinhouse/ruby-builder24`
+- `ramseyinhouse/ruby-builder-2.2`
+- `ramseyinhouse/ruby-builder-2.3`
+- `ramseyinhouse/ruby-builder-2.4`
 
 
 # License
@@ -57,3 +57,9 @@ As for any pre-built image usage, it is the image user's responsibility to ensur
 
 # Credit
 Much of this was gratefully adopted from the official ruby image [documentation](https://github.com/docker-library/docs/blob/master/ruby/README.md).
+
+# How to build the images.
+Example for building a ruby 2.5 image:
+```console
+docker build --build-arg RUBY_VERSION=2.5 -t ramseyinhouse/ruby-builder-2.5  .
+```
