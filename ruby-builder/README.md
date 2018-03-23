@@ -57,3 +57,9 @@ As for any pre-built image usage, it is the image user's responsibility to ensur
 
 # Credit
 Much of this was gratefully adopted from the official ruby image [documentation](https://github.com/docker-library/docs/blob/master/ruby/README.md).
+
+# How to build the images.
+Example for building a ruby 2.5 image:
+```console
+docker build --build-arg RUBY_VERSION=2.5 -t ramseyinhouse/ruby-builder-2.5  .
+```
