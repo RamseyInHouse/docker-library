@@ -1,0 +1,5 @@
+#!/bin/sh
+
+yarn build
+yarn pack --filename dist/gazelle-smartdollar-theme.tar.gz > /dev/null
+echo gazelle-smartdollar-theme.tar.gz
