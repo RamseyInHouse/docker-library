@@ -1,4 +1,3 @@
-
 # How to use this image
 
 ## Create a `Dockerfile` in your Node package's project
@@ -44,7 +43,6 @@ The builder image comes in three flavors, providing node versions 6, 8 and 9:
 - `ramseyinhouse/node-builder:9`
 - `ramseyinhouse/node-builder:8`
 - `ramseyinhouse/node-builder:6`
-
 
 # License
 

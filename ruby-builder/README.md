@@ -4,7 +4,7 @@
 ## Create a `Dockerfile` in your Ruby gem's project
 
 ```dockerfile
-FROM ramseyinhouse/ruby-builder-2.2
+FROM ramseyinhouse/ruby-builder:2.2
 
 COPY your-gem.gemspec /code/your-gem.gemspec
 COPY lib/your-gem/version.rb /code/lib/your-gem/version.rb
@@ -17,7 +17,7 @@ RUN setup \
 COPY . /code
 ```
 
-Put this file in the root of your app, next to the `Gemfile`.
+Put this file in the root of your project, next to the `Gemfile`.
 
 This image includes the following default scripts for your convenience. They live at `/usr/local/bin`. If you want to override them, `/code/bin` is set to the front of the `PATH` to make that easy.
 - setup - `bundle install`
@@ -36,15 +36,15 @@ $ docker run -it --rm your-gem
 To build your gem using the provided script:
 
 ```console
-$ docker run -it --rm -v "$PWD":/code/dist your-gem build
+$ docker run -it --rm -v "$PWD"/dist:/code/dist your-gem build
 ```
 
 # Image Variants
 
 The builder image comes in three flavors, providing ruby versions 2.2, 2.3 and 2.4:
-- `ramseyinhouse/ruby-builder-2.2`
-- `ramseyinhouse/ruby-builder-2.3`
-- `ramseyinhouse/ruby-builder-2.4`
+- `ramseyinhouse/ruby-builder:2.2`
+- `ramseyinhouse/ruby-builder:2.3`
+- `ramseyinhouse/ruby-builder:2.4`
 
 
 # License
@@ -61,5 +61,5 @@ Much of this was gratefully adopted from the official ruby image [documentation]
 # How to build the images.
 Example for building a ruby 2.5 image:
 ```console
-docker build --build-arg RUBY_VERSION=2.5 -t ramseyinhouse/ruby-builder-2.5  .
+docker build --build-arg RUBY_VERSION=2.5 -t ramseyinhouse/ruby-builder:2.5  .
 ```
