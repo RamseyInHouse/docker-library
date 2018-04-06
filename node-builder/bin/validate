@@ -2,4 +2,3 @@
 set -euxvo pipefail
 
 yarn test
-
