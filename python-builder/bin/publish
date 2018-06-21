@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+set -euo pipefail
+
+# publish package
+pip install twine
+
+# get all desired repositories to upload to
+# (these should map to repos in ~/.pypirc config)
+
+for repo in $UPLOAD_REPOS
+do
+    twine upload --repository $repo dist/*;
+done

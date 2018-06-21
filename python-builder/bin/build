@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+set -euo pipefail
+
+# build source distribution
+pipenv run python setup.py sdist > /dev/null 2>&1
+
+# Get package name so we can echo out the built artifact name
+PACKAGE_BUILD_NAME="$(ls dist/*.tar.gz)"
+
+echo $PACKAGE_BUILD_NAME
