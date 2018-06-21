@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+set -euxvo pipefail
+
+pip install pipenv
+pipenv install --dev --deploy

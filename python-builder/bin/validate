@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+set -euxvo pipefail
+
+pipenv run pytest
