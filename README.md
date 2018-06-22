@@ -8,3 +8,4 @@ This is the home for `Dockerfile`s behind the images available at https://hub.do
 
 Further documentation is provided per language:
  - [ruby](ruby-builder/README.md)
+ - [node](node-builder/README.md)
