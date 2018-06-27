@@ -5,6 +5,6 @@ set -euo pipefail
 pipenv run python setup.py sdist > /dev/null 2>&1
 
 # Get package name so we can echo out the built artifact name
-PACKAGE_BUILD_NAME="$(ls dist/*.tar.gz)"
+PACKAGE_BUILD_NAME="$(pipenv run python setup.py --fullname).tar.gz"
 
 echo $PACKAGE_BUILD_NAME
