@@ -8,8 +8,7 @@ FROM ramseyinhouse/python-builder:2.7
 
 COPY . /code
 
-RUN setup \
-    && validate
+RUN setup
 ```
 
 Put this file in the root of your project, next to `requirements.txt` or `Pipfile`.
@@ -101,8 +100,9 @@ $ docker build --build-arg UPLOAD_REPOS="pypi fury" -t your-package .
 
 # Image Variants
 
-The builder image comes in a single flavor, providing Python version 2.7:
+The builder image comes in two flavors, providing Python versions 2.7 and 3.6:
 - `ramseyinhouse/python-builder:2.7`
+- `ramseyinhouse/python-builder:3.6`
 
 
 # License
