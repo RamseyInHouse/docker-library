@@ -39,10 +39,12 @@ $ docker run -it --rm -v "$PWD"/dist:/code/dist your-package build
 
 # Image Variants
 
-The builder image comes in three flavors, providing node versions 6, 8 and 9:
+The builder image comes in these flavors, providing the indicated node versions:
+- `ramseyinhouse/node-builder:12`
+- `ramseyinhouse/node-builder:11`
+- `ramseyinhouse/node-builder:10`
 - `ramseyinhouse/node-builder:9`
 - `ramseyinhouse/node-builder:8`
-- `ramseyinhouse/node-builder:6`
 
 # License
 
@@ -55,5 +57,5 @@ As for any pre-built image usage, it is the image user's responsibility to ensur
 # How to build the images.
 Example for building a node 9 image:
 ```console
-docker build --build-arg NODE_VERSION=9 -t ramseyinhouse/node-builder:2.5  .
+docker build --build-arg NODE_VERSION=9 -t ramseyinhouse/node-builder:9  .
 ```
