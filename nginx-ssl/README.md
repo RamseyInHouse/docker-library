@@ -20,7 +20,7 @@ where every entry after the IP is a domain you want to be redirected to localhos
 You can use `docker run -p 443:443 ramseyinhouse/nginx-ssl` to run the image.
 
 ### Docker compose
-You can also include this file in a docker-compose setup with the following entry as a service.
+You can also include this file in a docker-compose set up with the following entry as a service.
 
 ```yaml
 nginx:
@@ -30,7 +30,7 @@ nginx:
 ```
 
 # How to build the images.
-Example for building a nginx-ssl image:
+Example for building an nginx-ssl image:
 ```console
 docker build -t ramseyinhouse/nginx-ssl  .
 ```
