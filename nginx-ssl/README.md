@@ -17,7 +17,7 @@ where every entry after the IP is a domain you want to be redirected to localhos
 
 ## Running the Image
 ### One-off run
-You can use `docker run -p 443:443 ramseyinhouse/nginx-ssl` to do run the image.
+You can use `docker run -p 443:443 ramseyinhouse/nginx-ssl` to run the image.
 
 ### Docker compose
 You can also include this file in a docker-compose setup with the following entry as a service.
